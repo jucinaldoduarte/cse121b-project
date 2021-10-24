@@ -2,11 +2,11 @@
 let response = document.getElementById('response');
 let input = document.getElementById('input');
 let btnInput = document.getElementById('btnInput');
-let tries = document.getElementById('tries')
+let tries = document.getElementById('tries');
 let count = 0;
 
 //Constants
-const min = 1;
+const min = 0;
 const max = 50;
 
 //Random number
@@ -22,7 +22,7 @@ function getInputValue(){
     let number = document.getElementById("input").value;    
 
         if(document.getElementById("input").value.length == 0) {
-          message = "Please enter a number"; 
+          message = "Please enter a number";           
         }
         else if (number < randomNum) {
           message = "Too low!";
@@ -46,13 +46,13 @@ function getInputValue(){
   
     // Reset button
   function getReset(){ 
+    document.getElementById("input").value = ""; 
+    document.getElementById("input").disabled = false;   
+    count = 0;
      for(let i = 1; i < 11; i = i + 1 ) {
-      document.getElementById("try"+i).style.color = "white";
-      document.getElementById("input").value = ""; 
-      document.getElementById("input").disabled = false;   
-      count = 0;
-  } 
+      document.getElementById("try"+i).style.color = "white";      
     } 
+  } 
 
 
     
